@@ -5,14 +5,36 @@
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+		<script>
+			$(document).ready(function(){
+				$("#cookie-btn").click(function(){
+        				var dt = new Date();
+					var time = (dt.getHours()%12) + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+					$("#cookie-list").append("<li>" + "ATE A COOKIE AT "+ time + "</li>");
+    				});
+
+			});
+		</script>
+		
 	</head>
 
 	<body>
-		<div class="jumbotron">
-  			<h1>Cookie Eater</h1> 
-  			<p>The game.</p>
-			<button type="button" class="btn btn-primary">Eat Cookie</button> 
+
+
+		<div class="container">
+  			<div class="jumbotron">
+				<h1>Cookie Eater</h1> 
+  				<p>The game.</p>
+				<button id="cookie-btn" type="button" class="btn btn-primary" onclick="addCookie()">Eat Cookie</button> 
+			</div>
 		</div>
+		
+		<div class="container">
+			<ul id="cookie-list">
+			</ul>
+		</div>
+
 	</body>
 
 </html>
